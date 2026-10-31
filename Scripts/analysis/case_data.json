@@ -1,0 +1,635 @@
+{
+  "case": "JH-CAPSTONE-2026-001",
+  "timeline": [
+    {
+      "time": "2026-03-24 15:57:28.430355+00:00",
+      "event": "worker denied sudo: user not in sudoers",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd5cdd0830-edb9e10e43a7e0a3.journal~ record 305",
+      "significance": "Earlier baseline differs from the later unrestricted sudo rule; setup activity cannot be assumed malicious.",
+      "kind": "Recorded event",
+      "id": "TL-01"
+    },
+    {
+      "time": "2026-03-24 15:57:34.916389+00:00",
+      "event": "su opens a root session for worker",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd5cdd0830-edb9e10e43a7e0a3.journal~ record 307",
+      "significance": "Administrative access existed before the later incident window; operator intent is not recorded.",
+      "kind": "Recorded event",
+      "id": "TL-02"
+    },
+    {
+      "time": "2026-03-24T16:01:44+00:00",
+      "event": "10-workers-rule mtime/ctime/birthtime",
+      "user": "Unknown; file owner root",
+      "source": "bodyfile/bodyfile.txt line 160531",
+      "significance": "Metadata dates the passwordless sudo policy artifact; it does not identify its author.",
+      "kind": "File metadata",
+      "id": "TL-03"
+    },
+    {
+      "time": "2026-03-24 16:02:14.388910+00:00",
+      "event": "worker invokes /bin/bash through sudo",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd5cdd0830-edb9e10e43a7e0a3.journal~ record 314",
+      "significance": "Recorded successful privilege transition after the sudo-rule timestamp.",
+      "kind": "Recorded event",
+      "id": "TL-04"
+    },
+    {
+      "time": "2026-03-24 17:07:11.587265+00:00",
+      "event": "worker password accepted from 192.168.4.35:49366",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~ record 881",
+      "significance": "Confirms password-based remote access; no individual operator attribution.",
+      "kind": "Recorded event",
+      "id": "TL-05"
+    },
+    {
+      "time": "2026-03-24 17:07:21.662466+00:00",
+      "event": "worker invokes root bash via sudo",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd5cdd0830-edb9e10e43a7e0a3.journal~ record 558",
+      "significance": "Another administrative session; not independently assigned to an attacker.",
+      "kind": "Recorded event",
+      "id": "TL-06"
+    },
+    {
+      "time": "2026-03-24 17:12:19.675502+00:00",
+      "event": "Connection from 192.168.4.35:48411 closed",
+      "user": "Unknown",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~ record 1084",
+      "significance": "Same source port later appears with the suspicious socket; an early probe is possible, not proven.",
+      "kind": "Recorded event",
+      "id": "TL-07"
+    },
+    {
+      "time": "2026-03-24 17:13:05.744896+00:00",
+      "event": "SSH listener restarts as PID 936",
+      "user": "root service",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~ record 1108",
+      "significance": "Service change precedes the later boot; the cause is not independently identified.",
+      "kind": "Recorded event",
+      "id": "TL-08"
+    },
+    {
+      "time": "2026-03-24 22:51:36.585668+00:00",
+      "event": "worker password accepted from 192.168.4.35:46862",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~ record 6217",
+      "significance": "Additional valid-account access; shared jump-host use limits attribution.",
+      "kind": "Recorded event",
+      "id": "TL-09"
+    },
+    {
+      "time": "2026-03-24 23:11:21.990010+00:00",
+      "event": "worker password accepted from 192.168.4.35:35586",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~ record 6572",
+      "significance": "Additional pre-collection login in the retained journal.",
+      "kind": "Recorded event",
+      "id": "TL-10"
+    },
+    {
+      "time": "2026-03-24 23:16:30.703139+00:00",
+      "event": "sshd logs libymv preload failure: file too short",
+      "user": "root service",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 939",
+      "significance": "A preload configuration was present but unsuccessful at this earlier point.",
+      "kind": "Recorded event",
+      "id": "TL-11"
+    },
+    {
+      "time": "2026-03-24 23:17:03.323052+00:00",
+      "event": "Connection from 192.168.4.35:48411 closed",
+      "user": "Unknown",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 990",
+      "significance": "Does not record an Accepted password event for this connection.",
+      "kind": "Recorded event",
+      "id": "TL-12"
+    },
+    {
+      "time": "2026-03-24 23:18:01.799574+00:00",
+      "event": "worker password accepted from 192.168.4.35:38274",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 1000",
+      "significance": "Successful remote login during the earlier failed-preload boot.",
+      "kind": "Recorded event",
+      "id": "TL-13"
+    },
+    {
+      "time": "2026-03-24 23:18:35.822577+00:00",
+      "event": "worker runs root bash through sudo",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd6c3b1bfb-6a67f21fb8deed92.journal~ record 66",
+      "significance": "Root access recorded; benign setup/administration remains an alternative for this event.",
+      "kind": "Recorded event",
+      "id": "TL-14"
+    },
+    {
+      "time": "2026-03-24 23:22:00.821260+00:00",
+      "event": "SSH listener available on TCP/22 after reboot",
+      "user": "root service",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 842",
+      "significance": "Establishes the current-boot listener before the final library replacement.",
+      "kind": "Recorded event",
+      "id": "TL-15"
+    },
+    {
+      "time": "2026-03-24 23:22:19.494485+00:00",
+      "event": "worker password accepted from 192.168.4.35:48364",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 879",
+      "significance": "Remote login precedes the suspicious library metadata timestamp.",
+      "kind": "Recorded event",
+      "id": "TL-16"
+    },
+    {
+      "time": "2026-03-24 23:23:34.979307+00:00",
+      "event": "worker runs root bash through sudo",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000.journal record 39",
+      "significance": "Temporal proximity to library change supports a possible installation path; not proof of operator identity.",
+      "kind": "Recorded event",
+      "id": "TL-17"
+    },
+    {
+      "time": "2026-03-24 23:23:48.186600+00:00",
+      "event": "Short worker password session from .35:55504",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 916",
+      "significance": "Separate brief session; do not merge it with the .35:48411 shell channel.",
+      "kind": "Recorded event",
+      "id": "TL-18"
+    },
+    {
+      "time": "2026-03-24T23:24:51+00:00",
+      "event": "libymv.so.3 mtime/ctime/birthtime",
+      "user": "Unknown; file owner root",
+      "source": "bodyfile/bodyfile.txt line 28956",
+      "significance": "24,024-byte root-owned executable library appears with matching metadata times; creation is a metadata observation.",
+      "kind": "File metadata",
+      "id": "TL-19"
+    },
+    {
+      "time": "2026-03-24 23:25:19.237723+00:00",
+      "event": "SSH PID 801 receives termination signal",
+      "user": "root service",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 924",
+      "significance": "Listener is replaced soon after the library timestamp.",
+      "kind": "Recorded event",
+      "id": "TL-20"
+    },
+    {
+      "time": "2026-03-24 23:25:19.344863+00:00",
+      "event": "New SSH listener PID 937 starts",
+      "user": "root service",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 930",
+      "significance": "PID 937 later maps libymv and shares the suspicious socket with shell processes.",
+      "kind": "Recorded event",
+      "id": "TL-21"
+    },
+    {
+      "time": "2026-03-24 23:27:13.927180+00:00",
+      "event": "Earlier sudo session closes",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000.journal record 43",
+      "significance": "Separates the earlier administrative session from the subsequent collection session.",
+      "kind": "Recorded event",
+      "id": "TL-22"
+    },
+    {
+      "time": "2026-03-24 23:33:44.773100+00:00",
+      "event": "Failed worker password from .35:55662",
+      "user": "worker (attempted)",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 956",
+      "significance": "One logged failed password; not enough to establish a brute-force campaign.",
+      "kind": "Recorded event",
+      "id": "TL-23"
+    },
+    {
+      "time": "2026-03-24 23:34:32.435430+00:00",
+      "event": "worker password accepted from .35:58910",
+      "user": "worker",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal record 959",
+      "significance": "The captured process tree links this login to the UAC collection session.",
+      "kind": "Recorded event",
+      "id": "TL-24"
+    },
+    {
+      "time": "2026-03-24 23:34:57.054763+00:00",
+      "event": "Collector-associated sudo starts root bash",
+      "user": "worker -> root",
+      "source": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000.journal record 129",
+      "significance": "PID 1076 is the ancestor of UAC; avoid labeling this elevation attacker activity.",
+      "kind": "Recorded event",
+      "id": "TL-25"
+    },
+    {
+      "time": "2026-03-24T23:38:07+00:00",
+      "event": "UAC ir_triage plus AVML collection starts",
+      "user": "root collector",
+      "source": "uac.log lines 1-8",
+      "significance": "Beginning of documented live evidence collection.",
+      "kind": "Collector event",
+      "id": "TL-26"
+    },
+    {
+      "time": "2026-03-24T23:39:23+00:00",
+      "event": "UAC invokes filesystem statx enumeration",
+      "user": "root collector",
+      "source": "uac.log line 2235",
+      "significance": "Bodyfile is a later live snapshot, not a complete historical audit.",
+      "kind": "Collector event",
+      "id": "TL-27"
+    },
+    {
+      "time": "2026-03-24T23:40:43+00:00",
+      "event": "UAC artifact collection completion logged",
+      "user": "root collector",
+      "source": "uac.log line 4139",
+      "significance": "Log reports completion in 155 seconds; separate memory/member timestamps are not overwritten by this field.",
+      "kind": "Collector event",
+      "id": "TL-28"
+    }
+  ],
+  "untimed": [
+    [
+      "UT-01",
+      "python3 -c with pty.spawn(\"/bin/bash\")",
+      "Shell associated with PID 939/940",
+      "Raw memory offset 4743251455; supplied socket rows 348-356",
+      "Interactive PTY creation. No trustworthy per-command timestamp."
+    ],
+    [
+      "UT-02",
+      "id returns uid=0(root), gid=7823",
+      "Root shell",
+      "Raw memory offset 3858882983",
+      "Strong evidence of privileged shell context; not a named human."
+    ],
+    [
+      "UT-03",
+      "mv xmrig top; export PATH=.:$PATH",
+      "Root shell",
+      "Raw memory offset 3858883096 onward",
+      "Renames the miner and prioritizes its directory during command lookup."
+    ],
+    [
+      "UT-04",
+      "ssh -F config ymv; bg",
+      "Root shell",
+      "Raw memory offset 3858883179 onward",
+      "Starts and backgrounds SSH using a separate configuration. Socket evidence supports forwarding."
+    ],
+    [
+      "UT-05",
+      "top -o 127.0.0.1:3333 -B",
+      "Root shell",
+      "Raw memory offset 3858883445; supplied socket rows 357-362",
+      "Miner command uses loopback forwarding. Remnant ps output shows PID 977, 99% CPU and 19:29 start; exact date/time not independently timestamped."
+    ],
+    [
+      "UT-06",
+      "rm -rf kit",
+      "Root shell",
+      "Raw memory offset 3858883558 onward",
+      "Removal command and later empty listing support cleanup, without recovering full deleted files."
+    ]
+  ],
+  "iocs": [
+    [
+      "IOC-01",
+      "/usr/lib/x86_64-linux-gnu/libymv.so.3",
+      "File path",
+      "High-confidence suspicious library",
+      "Preload output; PID 937 maps lines 45-49; bodyfile line 28956",
+      "Investigate this exact library with preload and hidden-process context; basename alone is not a universal verdict."
+    ],
+    [
+      "IOC-02",
+      "0fd709f09c073df274e272aabcabe3e0f3487f9e",
+      "SHA-1 (collector recorded)",
+      "Library fingerprint; not examiner-computed SHA-256",
+      "hash_executables/hash_executables.sha1 line 377",
+      "Hunt for matching bytes if a full file is acquired. Original contents not recovered in this examination."
+    ],
+    [
+      "IOC-03",
+      "/etc/ld.so.preload -> /lib/x86_64-linux-gnu/libymv.so.3",
+      "Configuration",
+      "Strong persistence/concealment indicator",
+      "chkrootkit/etc_ld_so_preload.txt line 1; mapped library",
+      "Global loader hook with correlated process hiding; confirm system baseline before remediation."
+    ],
+    [
+      "IOC-04",
+      "top -o 127.0.0.1:3333 -B",
+      "Command line",
+      "Strong disguised-miner indicator",
+      "Raw memory offset 3858883445; xmrig rename; supplied socket row 362",
+      "Do not flag ordinary /usr/bin/top alone. Exact arguments and context distinguish the miner."
+    ],
+    [
+      "IOC-05",
+      "/dev/shm/kit",
+      "Working directory",
+      "Suspicious tool staging/cleanup path",
+      "Raw memory offsets 3858883017-3858883793",
+      "Terminal remnants show config, rk.so, xmrig, subsequent rename and removal."
+    ],
+    [
+      "IOC-06",
+      "192.168.5.95:22",
+      "Remote endpoint",
+      "SSH peer associated with miner forwarding",
+      "Supplied memory socket row 357; raw command context",
+      "Private lab address; does not establish ownership, ultimate mining pool, or compromise of the peer."
+    ],
+    [
+      "IOC-07",
+      "127.0.0.1:3333",
+      "Loopback listener",
+      "Forwarded miner endpoint in this case",
+      "Supplied memory socket rows 359-362",
+      "Correlate SSH PID 975 listener with top PID 977 connection; loopback IP alone is not malicious."
+    ],
+    [
+      "IOC-08",
+      "192.168.4.35:48411 -> 192.168.4.22:22",
+      "Connection tuple",
+      "Suspicious shell-bearing connection",
+      "Supplied memory socket rows 347-356; Python remnant",
+      "Separate this tuple from the collector login on source port 58910."
+    ],
+    [
+      "IOC-09",
+      "worker",
+      "Account of interest",
+      "Legitimate account with excessive privilege; attribution unresolved",
+      "passwd line 37; sudo rule; journals",
+      "A shared account is not itself a malicious IOC. Investigate credential use and restrict privilege."
+    ],
+    [
+      "IOC-10",
+      "192.168.4.35",
+      "Context address",
+      "Shared jump host; mixed-use indicator",
+      "Authentication journals and two distinct socket tuples",
+      "Do not blanket-block or identify it as attacker infrastructure solely from its presence."
+    ],
+    [
+      "IOC-11",
+      "gid=7823",
+      "Runtime attribute",
+      "Corroborating shell-context marker",
+      "Raw memory offset 3858882983; no matching group entry",
+      "A hidden-process grouping mechanism is a hypothesis; rootkit internals were not recovered."
+    ]
+  ],
+  "attack": [
+    [
+      "T1059.006",
+      "Python",
+      "Execution",
+      "Supported",
+      "Python PTY command verified in raw memory and Python PID 940 in supplied socket table.",
+      "https://attack.mitre.org/techniques/T1059/006/"
+    ],
+    [
+      "T1059.004",
+      "Unix Shell",
+      "Execution",
+      "Supported",
+      "Raw terminal remnants and sh/bash processes associated with the suspicious socket.",
+      "https://attack.mitre.org/techniques/T1059/004/"
+    ],
+    [
+      "T1036.005",
+      "Match Legitimate Resource Name or Location",
+      "Stealth",
+      "Supported",
+      "mv xmrig top and miner arguments impersonate a familiar Linux utility name.",
+      "https://attack.mitre.org/techniques/T1036/005/"
+    ],
+    [
+      "T1496.001",
+      "Compute Hijacking",
+      "Impact",
+      "Strongly supported",
+      "XMRig identity strings, launch command, 99% CPU terminal remnant, and connected miner socket. Successful mining revenue is not established.",
+      "https://attack.mitre.org/techniques/T1496/001/"
+    ],
+    [
+      "T1572",
+      "Protocol Tunneling",
+      "Command and Control",
+      "Strongly supported",
+      "SSH owns loopback listener 3333 and connects to .5.95:22; miner connects to that listener. Forward target/payload not recovered.",
+      "https://attack.mitre.org/techniques/T1572/"
+    ],
+    [
+      "T1574.006",
+      "Dynamic Linker Hijacking",
+      "Stealth; Execution",
+      "Strongly supported",
+      "Global preload path, SSH daemon library map and correlated hidden processes. Loader persistence is a case observation; listed tactics follow current MITRE.",
+      "https://attack.mitre.org/techniques/T1574/006/"
+    ],
+    [
+      "T1014",
+      "Rootkit",
+      "Stealth",
+      "Strongly supported inference",
+      "Suspicious injected library plus process-list omissions corroborated by memory-derived socket output. Exact hook implementation and malware family not proven.",
+      "https://attack.mitre.org/techniques/T1014/"
+    ],
+    [
+      "T1070.004",
+      "File Deletion",
+      "Stealth",
+      "Supported command/remnant evidence",
+      "rm -rf kit followed by empty directory listing in raw memory. Full deleted-file recovery was not achieved.",
+      "https://attack.mitre.org/techniques/T1070/004/"
+    ],
+    [
+      "T1548.003",
+      "Sudo and Sudo Caching",
+      "Privilege Escalation",
+      "Conditional attacker mapping",
+      "Unrestricted NOPASSWD rule and actual worker-to-root sessions exist, but attribution of the installation to a specific sudo session is unresolved.",
+      "https://attack.mitre.org/techniques/T1548/003/"
+    ]
+  ],
+  "evidence": [
+    {
+      "id": "EV-003",
+      "path": "[root]/etc/passwd",
+      "description": "Account definitions",
+      "bytes": 2191,
+      "sha256": "393944c15a584a57e548b2bd8431f375244583c295da1b0043c33cda634fefa9",
+      "local": "03011.bin"
+    },
+    {
+      "id": "EV-004",
+      "path": "[root]/etc/group",
+      "description": "Group membership",
+      "bytes": 891,
+      "sha256": "69583ef7671daa627bc167428a901ee928d15fd3025cdeaa1c9af50b357f9a53",
+      "local": "02812.bin"
+    },
+    {
+      "id": "EV-005",
+      "path": "[root]/etc/shadow",
+      "description": "Credential state; hashes excluded from report",
+      "bytes": 1116,
+      "sha256": "d99cbfb64d4bc7e9c3702202153a9a5e473f58afdb98a610c6511ab6ff70b2b0",
+      "local": "03286.bin"
+    },
+    {
+      "id": "EV-006",
+      "path": "[root]/etc/sudoers.d/10-workers-rule",
+      "description": "Privilege policy",
+      "bytes": 30,
+      "sha256": "29c60c73eb3785e79086508ec2fe3591fb9f5ce4fcba78234718bac9d1d8f6e2",
+      "local": "03645.bin"
+    },
+    {
+      "id": "EV-007",
+      "path": "bodyfile/bodyfile.txt",
+      "description": "Filesystem metadata",
+      "bytes": 20781910,
+      "sha256": "aeec6af39c0b345a114c4f4a8f6459e362b4f0f15aeb43a9f2695ca137def020",
+      "local": "00001.bin"
+    },
+    {
+      "id": "EV-008",
+      "path": "chkrootkit/etc_ld_so_preload.txt",
+      "description": "Loader configuration observation",
+      "bytes": 34,
+      "sha256": "16b8d275e0542101686cd2dc063e52a72b65be62f92c8d44127cd7d98f7dbc12",
+      "local": "00003.bin"
+    },
+    {
+      "id": "EV-009",
+      "path": "live_response/process/hidden_pids_for_ps_command.txt",
+      "description": "Process discrepancy list",
+      "bytes": 26,
+      "sha256": "eec702e1e34ba745889a68954131e43c5c20be3812f32db3b2503491e8094700",
+      "local": "00057.bin"
+    },
+    {
+      "id": "EV-010",
+      "path": "live_response/process/ps_auxwwwf.txt",
+      "description": "Visible process tree",
+      "bytes": 12647,
+      "sha256": "a72e1ceb0ca6888043ac2bd88a30cdca949cc06f64821e56c56af5443333a703",
+      "local": "01575.bin"
+    },
+    {
+      "id": "EV-011",
+      "path": "live_response/process/proc/937/maps.txt",
+      "description": "SSH daemon memory mappings",
+      "bytes": 5890,
+      "sha256": "fa381c36069e052b84455e5b921284a278562515f795fa4db142713bba055625",
+      "local": "01532.bin"
+    },
+    {
+      "id": "EV-012",
+      "path": "memory_dump/avml.lime",
+      "description": "Raw memory capture",
+      "bytes": 8589467742,
+      "sha256": "809843e1e1e281f6c6efddaf887e88aefe92e5d82f16a0b3ca30b984295a7bfb",
+      "local": "01931.bin"
+    },
+    {
+      "id": "EV-013",
+      "path": "memory_dump/memory-strings.ascii",
+      "description": "Supplied offset-bearing memory strings",
+      "bytes": 2310807163,
+      "sha256": "4d2c553e658124638124250492246d6768c60878d28d4e078aa2358e4f3c9869",
+      "local": "01933.bin"
+    },
+    {
+      "id": "EV-014",
+      "path": "memory_dump/output-sockstat",
+      "description": "Supplied Volatility 3 2.27.1 socket output; not rerun here",
+      "bytes": 73382,
+      "sha256": "2bb5e3178bdb75c012d943be9b1413f5ea4564c2e83258048e1d19b358307b08",
+      "local": "01932.bin"
+    },
+    {
+      "id": "EV-015",
+      "path": "hash_executables/hash_executables.sha1",
+      "description": "Collector SHA-1 listing",
+      "bytes": 671447,
+      "sha256": "5a8828cbc67eaa5c88599c174227475abae915bf4b24caad359a38b8060abaf4",
+      "local": "00007.bin"
+    },
+    {
+      "id": "EV-016",
+      "path": "uac.log",
+      "description": "Collector operations log",
+      "bytes": 499395,
+      "sha256": "c1fd9d5fd3c1024eeda51b93076c59f8a561080ea88d336f2d2e8ee6a06979f6",
+      "local": "05495.bin"
+    },
+    {
+      "id": "EV-017",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "aa0dd9682e3a75e039708c4291070451a87a0b32849452b39a893345ca3a7509",
+      "local": "05459.bin"
+    },
+    {
+      "id": "EV-018",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dc82dd05024-788c2311bf14a5ce.journal~",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "a612792abaa6ce393d3a57bf2da35467fff63cfa589a1471930ceaa999e8cabb",
+      "local": "05460.bin"
+    },
+    {
+      "id": "EV-019",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "74b4bf6e692cdd56440b4079975d83da9f1781c19add58fd73e5d267542dd1f1",
+      "local": "05461.bin"
+    },
+    {
+      "id": "EV-020",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "099b7edb0ae3b57d69abd021cbc45c86c9b13dcb9e1626669af867780c4acf9a",
+      "local": "05462.bin"
+    },
+    {
+      "id": "EV-021",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000.journal",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "62bb758b3935f3d72bd953a8570c07f932316417f852215c14e2298c6674b867",
+      "local": "05463.bin"
+    },
+    {
+      "id": "EV-022",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd5cdd0830-edb9e10e43a7e0a3.journal~",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "33415b01a8dd3f7b0f2875e05449c80b387a198d57845a39f8631fdbbd3596ed",
+      "local": "05464.bin"
+    },
+    {
+      "id": "EV-023",
+      "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd6c3b1bfb-6a67f21fb8deed92.journal~",
+      "description": "Systemd journal",
+      "bytes": 8388608,
+      "sha256": "36cb8a68f4c3f6de32bf25a9ceb862133185d8f9be0ec411d6c3a639424ca488",
+      "local": "05465.bin"
+    }
+  ]
+}

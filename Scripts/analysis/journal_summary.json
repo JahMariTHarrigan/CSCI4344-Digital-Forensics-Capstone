@@ -1,0 +1,30 @@
+[
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system.journal",
+    "records": 995
+  },
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dc82dd05024-788c2311bf14a5ce.journal~",
+    "records": 3502
+  },
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd5758a0f6-bc905051ecbf280b.journal~",
+    "records": 6809
+  },
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~",
+    "records": 1124
+  },
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000.journal",
+    "records": 130
+  },
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd5cdd0830-edb9e10e43a7e0a3.journal~",
+    "records": 1030
+  },
+  {
+    "path": "[root]/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f/user-1000@00064dcd6c3b1bfb-6a67f21fb8deed92.journal~",
+    "records": 115
+  }
+]

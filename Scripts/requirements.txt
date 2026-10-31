@@ -1,0 +1,4 @@
+dissect.target==3.25.1
+dissect.eventlog==3.11
+lz4==4.4.5
+zstandard

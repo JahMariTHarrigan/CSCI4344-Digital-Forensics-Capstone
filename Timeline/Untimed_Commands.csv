@@ -1,0 +1,7 @@
+﻿ID,Action,Actor,Source,Interpretation
+UT-01,"python3 -c with pty.spawn(""/bin/bash"")",Shell associated with PID 939/940,Raw memory offset 4743251455; supplied socket rows 348-356,Interactive PTY creation. No trustworthy per-command timestamp.
+UT-02,"id returns uid=0(root), gid=7823",Root shell,Raw memory offset 3858882983,Strong evidence of privileged shell context; not a named human.
+UT-03,mv xmrig top; export PATH=.:$PATH,Root shell,Raw memory offset 3858883096 onward,Renames the miner and prioritizes its directory during command lookup.
+UT-04,ssh -F config ymv; bg,Root shell,Raw memory offset 3858883179 onward,Starts and backgrounds SSH using a separate configuration. Socket evidence supports forwarding.
+UT-05,top -o 127.0.0.1:3333 -B,Root shell,Raw memory offset 3858883445; supplied socket rows 357-362,"Miner command uses loopback forwarding. Remnant ps output shows PID 977, 99% CPU and 19:29 start; exact date/time not independently timestamped."
+UT-06,rm -rf kit,Root shell,Raw memory offset 3858883558 onward,"Removal command and later empty listing support cleanup, without recovering full deleted files."

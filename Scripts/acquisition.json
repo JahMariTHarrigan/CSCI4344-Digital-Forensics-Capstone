@@ -1,0 +1,13 @@
+{
+  "source_page": "https://righteousit.com/2026/03/27/linux-forensic-scenario/",
+  "download_link": "https://deerrunassoc-my.sharepoint.com/:u:/g/personal/hal_deer-run_com/IQAGrMUqVLwEQ4Ceus_70Pn0AVxMaWSs7POONKw6ss103Bc?e=4N5uje",
+  "start_utc": "2026-10-30T15:45:23.097028+00:00",
+  "operator": "Automated collection for JahMari Harrigan",
+  "file": "uac-vbox-linux-20260324234043.tar.gz",
+  "expected_bytes": 6205082254,
+  "content_type": "application/x-gzip",
+  "bytes": 6205082254,
+  "sha256": "81664ab2337f3d319cfeaf0d96e6ae982b4b8ec383341a69a026cb016d4e443e",
+  "end_utc": "2026-10-30T16:03:20.757009+00:00",
+  "status": "download complete; independent hash pending"
+}

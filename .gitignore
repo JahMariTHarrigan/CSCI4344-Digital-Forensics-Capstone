@@ -1,0 +1,12 @@
+evidence/
+working/
+tools/
+__pycache__/
+*.pyc
+*.tar.gz
+*.lime
+*.bin
+*.pcap*
+.env*
+*Resume*
+*resume*

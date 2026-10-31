@@ -1,0 +1,716 @@
+[
+  {
+    "strings_line": 9269423,
+    "reported_offset": 646342815,
+    "text": "ERROR: ld.so: object '/lib/x86_64-linux-gnu/libymv.so.3' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "4552524f523a206c642e736f3a206f626a65637420272f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33272066726f6d202f6574632f6c642e"
+  },
+  {
+    "strings_line": 9270029,
+    "reported_offset": 646364549,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 9270030,
+    "reported_offset": 646364714,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 9270031,
+    "reported_offset": 646364879,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 9270032,
+    "reported_offset": 646365044,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 24379535,
+    "reported_offset": 1853787295,
+    "text": "ERROR: ld.so: object '/lib/x86_64-linux-gnu/libymv.so.3' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "4552524f523a206c642e736f3a206f626a65637420272f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33272066726f6d202f6574632f6c642e"
+  },
+  {
+    "strings_line": 49724838,
+    "reported_offset": 3858883096,
+    "text": "root@vbox:/dev/shm/kit# mv xmrig top",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "726f6f744076626f783a2f6465762f73686d2f6b697423206d7620786d72696720746f70"
+  },
+  {
+    "strings_line": 49811411,
+    "reported_offset": 3899682595,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 49879965,
+    "reported_offset": 3915241879,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50123638,
+    "reported_offset": 3962980399,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50123639,
+    "reported_offset": 3962981687,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50123641,
+    "reported_offset": 3962981749,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50123671,
+    "reported_offset": 3962990815,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50146149,
+    "reported_offset": 3964643583,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50146150,
+    "reported_offset": 3964644871,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50146152,
+    "reported_offset": 3964644933,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 50331763,
+    "reported_offset": 3989238180,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 50331764,
+    "reported_offset": 3989238345,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 50331765,
+    "reported_offset": 3989238510,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 50331766,
+    "reported_offset": 3989238675,
+    "text": "E [24/Mar/2026:19:16:30 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3330202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 50331767,
+    "reported_offset": 3989238840,
+    "text": "E [24/Mar/2026:19:16:32 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3332202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 50331768,
+    "reported_offset": 3989239005,
+    "text": "E [24/Mar/2026:19:16:32 -0400] [Notifier] ld.so: object \\'/lib/x86_64-linux-gnu/libymv.so.3\\' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "45205b32342f4d61722f323032363a31393a31363a3332202d303430305d205b4e6f7469666965725d206c642e736f3a206f626a656374205c272f6c69622f7838365f36342d"
+  },
+  {
+    "strings_line": 54223290,
+    "reported_offset": 4318437599,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 54349083,
+    "reported_offset": 4335417391,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 54349084,
+    "reported_offset": 4335418679,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 54349086,
+    "reported_offset": 4335418741,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 55018541,
+    "reported_offset": 4416176351,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58482520,
+    "reported_offset": 4699838671,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58482521,
+    "reported_offset": 4699839959,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58482523,
+    "reported_offset": 4699840021,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58490201,
+    "reported_offset": 4702856703,
+    "text": "XMRig/6.24.0 (Linux x86_64) libuv/1.51.0 gcc/12.2.0",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "584d5269672f362e32342e3020284c696e7578207838365f363429206c696275762f312e35312e30206763632f31322e322e30"
+  },
+  {
+    "strings_line": 58510005,
+    "reported_offset": 4704649439,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58510034,
+    "reported_offset": 4704667695,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58510035,
+    "reported_offset": 4704668983,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58510037,
+    "reported_offset": 4704669045,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58512769,
+    "reported_offset": 4704936159,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58512828,
+    "reported_offset": 4704954415,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58512829,
+    "reported_offset": 4704955703,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58512831,
+    "reported_offset": 4704955765,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58515519,
+    "reported_offset": 4705136294,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 58524845,
+    "reported_offset": 4706834479,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58524846,
+    "reported_offset": 4706835767,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58524848,
+    "reported_offset": 4706835829,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58525216,
+    "reported_offset": 4707098847,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58526800,
+    "reported_offset": 4707516639,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58526843,
+    "reported_offset": 4707580207,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 58544045,
+    "reported_offset": 4710052063,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58545064,
+    "reported_offset": 4710326495,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58545123,
+    "reported_offset": 4710336559,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58545124,
+    "reported_offset": 4710337847,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58545126,
+    "reported_offset": 4710337909,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58547409,
+    "reported_offset": 4710770735,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58547410,
+    "reported_offset": 4710772023,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58547412,
+    "reported_offset": 4710772085,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58552838,
+    "reported_offset": 4711547103,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58560000,
+    "reported_offset": 4712572975,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58560001,
+    "reported_offset": 4712574263,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58560003,
+    "reported_offset": 4712574325,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58561652,
+    "reported_offset": 4713052207,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58561653,
+    "reported_offset": 4713053495,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58561655,
+    "reported_offset": 4713053557,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58612801,
+    "reported_offset": 4721938655,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58613858,
+    "reported_offset": 4722170591,
+    "text": "mv xmrig top",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6d7620786d72696720746f70"
+  },
+  {
+    "strings_line": 58646128,
+    "reported_offset": 4728582367,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58693474,
+    "reported_offset": 4732352559,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58693475,
+    "reported_offset": 4732353847,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58693477,
+    "reported_offset": 4732353909,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58693530,
+    "reported_offset": 4732371167,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58707129,
+    "reported_offset": 4734189791,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58707933,
+    "reported_offset": 4734445823,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58707934,
+    "reported_offset": 4734447111,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58707936,
+    "reported_offset": 4734447173,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58739198,
+    "reported_offset": 4740169951,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58739487,
+    "reported_offset": 4740298799,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58739488,
+    "reported_offset": 4740300087,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58739490,
+    "reported_offset": 4740300149,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58759547,
+    "reported_offset": 4742664415,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58762424,
+    "reported_offset": 4743202863,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58762425,
+    "reported_offset": 4743204151,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58762427,
+    "reported_offset": 4743204213,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58762641,
+    "reported_offset": 4743251455,
+    "text": "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "707974686f6e33202d632027696d706f7274207074793b207074792e737061776e28222f62696e2f62617368222927"
+  },
+  {
+    "strings_line": 58799662,
+    "reported_offset": 4748940071,
+    "text": "/usr/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f7573722f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58800551,
+    "reported_offset": 4749367343,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58800552,
+    "reported_offset": 4749368631,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58800554,
+    "reported_offset": 4749368693,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58832907,
+    "reported_offset": 4753510623,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58863220,
+    "reported_offset": 4761030783,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 58863222,
+    "reported_offset": 4761031111,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 58875365,
+    "reported_offset": 4762667055,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58875366,
+    "reported_offset": 4762668343,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58875368,
+    "reported_offset": 4762668405,
+    "text": "libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58879280,
+    "reported_offset": 4763541727,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 58885140,
+    "reported_offset": 4764460919,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 58886512,
+    "reported_offset": 4764669639,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 69767157,
+    "reported_offset": 5647503582,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 69767159,
+    "reported_offset": 5647503910,
+    "text": "import pty; pty.spawn(\"/bin/bash\")",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "696d706f7274207074793b207074792e737061776e28222f62696e2f626173682229"
+  },
+  {
+    "strings_line": 90338502,
+    "reported_offset": 7517081694,
+    "text": "3/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "332f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 91965544,
+    "reported_offset": 7811403965,
+    "text": "3/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "332f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 93215744,
+    "reported_offset": 7946973468,
+    "text": "3/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "332f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 94431886,
+    "reported_offset": 8107475323,
+    "text": "3/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "332f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  },
+  {
+    "strings_line": 94564326,
+    "reported_offset": 8127069495,
+    "text": "MESSAGE=ERROR: ld.so: object '/lib/x86_64-linux-gnu/libymv.so.3' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "4d4553534147453d4552524f523a206c642e736f3a206f626a65637420272f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33272066726f6d20"
+  },
+  {
+    "strings_line": 95448995,
+    "reported_offset": 8237506655,
+    "text": "/lib/x86_64-linux-gnu/libymv.so.3",
+    "matches_raw_dump_at_reported_offset": true,
+    "actual_prefix": "2f6c69622f7838365f36342d6c696e75782d676e752f6c6962796d762e736f2e33"
+  }
+]

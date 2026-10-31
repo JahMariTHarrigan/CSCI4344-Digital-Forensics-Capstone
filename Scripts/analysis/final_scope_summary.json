@@ -1,0 +1,287 @@
+{
+  "examined_on": "2026-10-31",
+  "setid_metadata": [
+    {
+      "line": 557,
+      "path": "/run/log/journal",
+      "mode": "drwxr-sr-x",
+      "uid": "0",
+      "gid": "999",
+      "size": "40"
+    },
+    {
+      "line": 7577,
+      "path": "/usr/lib/dbus-1.0/dbus-daemon-launch-helper",
+      "mode": "-rwsr-xr--",
+      "uid": "0",
+      "gid": "990",
+      "size": "51272"
+    },
+    {
+      "line": 8246,
+      "path": "/usr/lib/xorg/Xorg.wrap",
+      "mode": "-rwsr-sr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "14672"
+    },
+    {
+      "line": 9036,
+      "path": "/usr/lib/openssh/ssh-keysign",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "494144"
+    },
+    {
+      "line": 28366,
+      "path": "/usr/lib/polkit-1/polkit-agent-helper-1",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "18744"
+    },
+    {
+      "line": 32704,
+      "path": "/usr/lib/x86_64-linux-gnu/utempter/utempter",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "43",
+      "size": "14416"
+    },
+    {
+      "line": 35772,
+      "path": "/usr/sbin/unix_chkpwd",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "42",
+      "size": "43256"
+    },
+    {
+      "line": 35793,
+      "path": "/usr/sbin/pppd",
+      "mode": "-rwsr-xr--",
+      "uid": "0",
+      "gid": "30",
+      "size": "428424"
+    },
+    {
+      "line": 36071,
+      "path": "/usr/libexec/camel-lock-helper-1.2",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "8",
+      "size": "22784"
+    },
+    {
+      "line": 82337,
+      "path": "/usr/share/ppd/custom",
+      "mode": "drwxrwsr-t",
+      "uid": "0",
+      "gid": "108",
+      "size": "4096"
+    },
+    {
+      "line": 146027,
+      "path": "/usr/bin/sudo",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "306456"
+    },
+    {
+      "line": 146033,
+      "path": "/usr/bin/expiry",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "42",
+      "size": "31256"
+    },
+    {
+      "line": 146165,
+      "path": "/usr/bin/ntfs-3g",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "166848"
+    },
+    {
+      "line": 146214,
+      "path": "/usr/bin/dotlockfile",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "8",
+      "size": "23104"
+    },
+    {
+      "line": 146461,
+      "path": "/usr/bin/passwd",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "118168"
+    },
+    {
+      "line": 146514,
+      "path": "/usr/bin/gpasswd",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "88568"
+    },
+    {
+      "line": 146666,
+      "path": "/usr/bin/crontab",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "997",
+      "size": "51936"
+    },
+    {
+      "line": 146690,
+      "path": "/usr/bin/pkexec",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "30952"
+    },
+    {
+      "line": 146735,
+      "path": "/usr/bin/fusermount3",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "39224"
+    },
+    {
+      "line": 146764,
+      "path": "/usr/bin/chage",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "42",
+      "size": "113848"
+    },
+    {
+      "line": 146826,
+      "path": "/usr/bin/mount",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "72072"
+    },
+    {
+      "line": 146903,
+      "path": "/usr/bin/umount",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "55688"
+    },
+    {
+      "line": 146919,
+      "path": "/usr/bin/chfn",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "70888"
+    },
+    {
+      "line": 146941,
+      "path": "/usr/bin/chsh",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "52936"
+    },
+    {
+      "line": 146957,
+      "path": "/usr/bin/ssh-agent",
+      "mode": "-rwxr-sr-x",
+      "uid": "0",
+      "gid": "104",
+      "size": "420224"
+    },
+    {
+      "line": 147011,
+      "path": "/usr/bin/su",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "84360"
+    },
+    {
+      "line": 147042,
+      "path": "/usr/bin/newgrp",
+      "mode": "-rwsr-xr-x",
+      "uid": "0",
+      "gid": "0",
+      "size": "18816"
+    },
+    {
+      "line": 158291,
+      "path": "/var/mail",
+      "mode": "drwxrwsr-x",
+      "uid": "0",
+      "gid": "8",
+      "size": "4096"
+    },
+    {
+      "line": 158320,
+      "path": "/var/log/journal",
+      "mode": "drwxr-sr-x",
+      "uid": "0",
+      "gid": "999",
+      "size": "4096"
+    },
+    {
+      "line": 158321,
+      "path": "/var/log/journal/0f2f13b9dce0451591ae0dc418f6c96f",
+      "mode": "drwxr-sr-x",
+      "uid": "0",
+      "gid": "999",
+      "size": "4096"
+    },
+    {
+      "line": 159588,
+      "path": "/etc/chatscripts",
+      "mode": "drwxr-s---",
+      "uid": "0",
+      "gid": "30",
+      "size": "4096"
+    },
+    {
+      "line": 159851,
+      "path": "/etc/ppp/peers",
+      "mode": "drwxr-s---",
+      "uid": "0",
+      "gid": "30",
+      "size": "4096"
+    }
+  ],
+  "reviewed_profile_paths": [
+    "[root]/etc/profile",
+    "[root]/etc/profile.d/bash_completion.sh",
+    "[root]/etc/profile.d/gnome-session_gnomerc.sh",
+    "[root]/etc/profile.d/im-config_wayland.sh",
+    "[root]/etc/profile.d/vte-2.91.sh",
+    "[root]/etc/profile.d/vte.csh"
+  ],
+  "network_artifact_paths": [
+    "[root]/etc/apache2/mods-available/dnssd.conf",
+    "[root]/etc/apache2/mods-available/dnssd.load",
+    "[root]/etc/apparmor.d/abstractions/mdns",
+    "[root]/etc/avahi/hosts",
+    "[root]/etc/hosts",
+    "[root]/etc/network/if-down.d/resolved",
+    "[root]/etc/network/if-up.d/resolved",
+    "[root]/etc/ppp/ip-down.d/0000usepeerdns",
+    "[root]/etc/ppp/ip-up.d/0000usepeerdns",
+    "[root]/etc/resolv.conf",
+    "[root]/usr/share/dbus-1/interfaces/org.freedesktop.Avahi.AddressResolver.xml",
+    "[root]/usr/share/dbus-1/interfaces/org.freedesktop.Avahi.HostNameResolver.xml",
+    "[root]/usr/share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml",
+    "[root]/usr/share/dbus-1/system.d/dnsmasq.conf",
+    "system/sgid.txt",
+    "system/suid.txt"
+  ]
+}

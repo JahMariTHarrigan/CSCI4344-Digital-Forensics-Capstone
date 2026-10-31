@@ -1,0 +1,10 @@
+﻿Technique,Name,Tactic,Assessment,Evidence,Reference
+T1059.006,Python,Execution,Supported,Python PTY command verified in raw memory and Python PID 940 in supplied socket table.,https://attack.mitre.org/techniques/T1059/006/
+T1059.004,Unix Shell,Execution,Supported,Raw terminal remnants and sh/bash processes associated with the suspicious socket.,https://attack.mitre.org/techniques/T1059/004/
+T1036.005,Match Legitimate Resource Name or Location,Stealth,Supported,mv xmrig top and miner arguments impersonate a familiar Linux utility name.,https://attack.mitre.org/techniques/T1036/005/
+T1496.001,Compute Hijacking,Impact,Strongly supported,"XMRig identity strings, launch command, 99% CPU terminal remnant, and connected miner socket. Successful mining revenue is not established.",https://attack.mitre.org/techniques/T1496/001/
+T1572,Protocol Tunneling,Command and Control,Strongly supported,SSH owns loopback listener 3333 and connects to .5.95:22; miner connects to that listener. Forward target/payload not recovered.,https://attack.mitre.org/techniques/T1572/
+T1574.006,Dynamic Linker Hijacking,Stealth; Execution,Strongly supported,"Global preload path, SSH daemon library map and correlated hidden processes. Loader persistence is a case observation; listed tactics follow current MITRE.",https://attack.mitre.org/techniques/T1574/006/
+T1014,Rootkit,Stealth,Strongly supported inference,Suspicious injected library plus process-list omissions corroborated by memory-derived socket output. Exact hook implementation and malware family not proven.,https://attack.mitre.org/techniques/T1014/
+T1070.004,File Deletion,Stealth,Supported command/remnant evidence,rm -rf kit followed by empty directory listing in raw memory. Full deleted-file recovery was not achieved.,https://attack.mitre.org/techniques/T1070/004/
+T1548.003,Sudo and Sudo Caching,Privilege Escalation,Conditional attacker mapping,"Unrestricted NOPASSWD rule and actual worker-to-root sessions exist, but attribution of the installation to a specific sudo session is unresolved.",https://attack.mitre.org/techniques/T1548/003/

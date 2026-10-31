@@ -1,0 +1,114 @@
+[
+  {
+    "number": 1,
+    "title": "Original evidence integrity",
+    "source": "Acquisition record and independent SHA-256 verification",
+    "text": "File: uac-vbox-linux-20260324234043.tar.gz\nSize: 6,205,082,254 bytes\nDownload SHA-256:\n81664ab2337f3d319cfeaf0d96e6ae982b4b8ec383341a69a026cb016d4e443e\nIndependent SHA-256:\n81664ab2337f3d319cfeaf0d96e6ae982b4b8ec383341a69a026cb016d4e443e\nMatch: True\nDownload completed: 2026-10-30T16:03:20.757009+00:00\nVerified: 2026-10-30T21:22:22.206653+00:00",
+    "caption": "Original archive download hash matches an independent full-file SHA-256 calculation before examination."
+  },
+  {
+    "number": 2,
+    "title": "Evidence inventory",
+    "source": "Archive inventory and extraction manifest",
+    "text": "Archive members: 5,496\nRegular files extracted: 3,516\nTotal logical file bytes: 11,180,188,785\n\nLargest evidence members:\n8,589,467,742  memory_dump/avml.lime\n2,310,807,163  memory_dump/memory-strings.ascii\n   54,606,716  [root]/boot/initrd.img-6.12.74+deb13+1-amd64\n   54,424,194  [root]/boot/initrd.img-6.12.43+deb13-amd64\n   20,781,910  bodyfile/bodyfile.txt",
+    "caption": "The archive inventory separates memory, supplied strings, Linux files, and metadata before targeted examination."
+  },
+  {
+    "number": 3,
+    "title": "Accounts and privileges",
+    "source": "[root]/etc/passwd; [root]/etc/group; [root]/etc/sudoers.d/10-workers-rule",
+    "text": "    1  root:x:0:0:root:/root:/bin/bash\n   37  worker:x:1000:1000:worker,,,:/home/worker:/bin/bash\n   38  sshd:x:986:65534:sshd user:/run/sshd:/usr/sbin/nologin\n\n   21  sudo:x:27:\n   37  users:x:100:worker\n   66  worker:x:1000:\n\n    1  worker ALL=(ALL) NOPASSWD:ALL",
+    "caption": "The worker account has UID 1000 and a direct passwordless sudo rule. Its empty sudo-group membership does not remove the separate grant."
+  },
+  {
+    "number": 4,
+    "title": "Worker authentication and collection session",
+    "source": "Parsed system.journal and user-1000.journal",
+    "text": "2026-03-24 23:22:19.494485+00:00  Accepted password for worker from 192.168.4.35 port 48364 ssh2\n  system.journal record 879\n2026-03-24 23:23:48.186600+00:00  Accepted password for worker from 192.168.4.35 port 55504 ssh2\n  system.journal record 916\n2026-03-24 23:33:44.773100+00:00  Failed password for worker from 192.168.4.35 port 55662 ssh2\n  system.journal record 956\n2026-03-24 23:34:32.435430+00:00  Accepted password for worker from 192.168.4.35 port 58910 ssh2\n  system.journal record 959\n2026-03-24 23:34:57.054763+00:00    worker : TTY=pts/0 ; PWD=/home/worker ; USER=root ; COMMAND=/bin/bash\n  user-1000.journal record 129",
+    "caption": "Distinct worker SSH sessions include the later port-58910 session whose process tree launches UAC. Do not automatically classify it as attacker access."
+  },
+  {
+    "number": 5,
+    "title": "Collector process ancestry",
+    "source": "live_response/process/ps_auxwwwf.txt",
+    "text": "  116  root         937  0.0  0.0  11788  7984 ?        Ss   19:25   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups\n  117  root        1005  0.0  0.1  19856 12924 ?        Ss   19:34   0:00  \\_ sshd-session: worker [priv]\n  118  worker      1047  0.0  0.0  20016  7592 ?        S    19:34   0:00      \\_ sshd-session: worker@pts/0\n  119  worker      1064  0.0  0.0   9064  5856 pts/0    Ss   19:34   0:00          \\_ -bash\n  120  root        1076  0.0  0.0  21764  7796 pts/0    S+   19:34   0:00              \\_ sudo -s\n  121  root        1078  0.0  0.0  21764  2800 pts/1    Ss   19:34   0:00                  \\_ sudo -s\n  122  root        1079  0.0  0.0   7304  4124 pts/1    S    19:34   0:00                      \\_ /bin/bash\n  123  root        1096  0.1  0.0   3272  2376 pts/1    S+   19:38   0:00                          \\_ /bin/sh ./uac -a memory_dump/avml.yaml -p ir_triage /root\n  124  root        2397  0.0  0.0   3272  1860 pts/1    S+   19:38   0:00                              \\_ /bin/sh ./uac -a memory_dump/avml.yaml -p ir_triage /root\n  125  root        2506  0.0  0.0   6432  3852 pts/1    R+   19:38   0:00                                  \\_ ps auxwwwf",
+    "caption": "The visible worker SSH session leads through sudo and bash to UAC; this identifies collector-associated privileged activity."
+  },
+  {
+    "number": 6,
+    "title": "Processes omitted from ps",
+    "source": "live_response/process/hidden_pids_for_ps_command.txt; supplied memory_dump/output-sockstat",
+    "text": "    1  43168\n    2  939\n    3  940\n    4  941\n    5  975\n    6  977\n\nSelected supplied memory socket rows:\n  348  4026531840\tsh\t939\t939\t0\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  351  4026531840\tsh\t939\t939\t8\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  354  4026531840\tpython3\t940\t940\t2\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  357  4026531840\tssh\t975\t975\t3\t0x8c7cc405cc00\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t33440\t192.168.5.95\t22\tESTABLISHED\t-\n  360  4026531840\tssh\t975\t975\t6\t0x8c7cc405e880\tAF_INET\tSTREAM\tTCP\t127.0.0.1\t3333\t127.0.0.1\t59182\tESTABLISHED\t-",
+    "caption": "UAC flagged these PIDs as missing from ps. The supplied memory socket output independently lists sh, python3, bash, ssh, and top for the matching IDs; PID 43168 remains uncorroborated."
+  },
+  {
+    "number": 7,
+    "title": "Dynamic library preload",
+    "source": "chkrootkit/etc_ld_so_preload.txt; chkrootkit/stat_etc_ld_so_preload.txt",
+    "text": "    1  /lib/x86_64-linux-gnu/libymv.so.3\n\n    1  0|/etc/ld.so.preload|837578|-rw-r--r--|0|0|34|1774394719|1774394709|1774394709|1774394709",
+    "caption": "The collector records a global preload reference to libymv.so.3. This is corroborated by the SSH daemon memory map."
+  },
+  {
+    "number": 8,
+    "title": "Suspicious library mapped in SSH daemon",
+    "source": "live_response/process/proc/937/maps.txt",
+    "text": "   45  7f7da1aa5000-7f7da1aa7000 r--p 00000000 08:01 715378                     /usr/lib/x86_64-linux-gnu/libymv.so.3\n   46  7f7da1aa7000-7f7da1aa9000 r-xp 00002000 08:01 715378                     /usr/lib/x86_64-linux-gnu/libymv.so.3\n   47  7f7da1aa9000-7f7da1aaa000 r--p 00004000 08:01 715378                     /usr/lib/x86_64-linux-gnu/libymv.so.3\n   48  7f7da1aaa000-7f7da1aab000 r--p 00004000 08:01 715378                     /usr/lib/x86_64-linux-gnu/libymv.so.3\n   49  7f7da1aab000-7f7da1aac000 rw-p 00005000 08:01 715378                     /usr/lib/x86_64-linux-gnu/libymv.so.3",
+    "caption": "PID 937 maps libymv.so.3 in five regions, corroborating active loading of the library during collection."
+  },
+  {
+    "number": 9,
+    "title": "Commands recovered from raw memory",
+    "source": "memory_dump/avml.lime; file byte offset 3858882749 (1,070-byte excerpt)",
+    "text": "root@vbox:/# rest\nbash: rest: command not found\nroot@vbox:/# reset\nreset: unknown terminal type unknown\nTerminal type? xterm\n[?3;4l\n[?69l\nroot@vbox:/# export\n      \necho $SHELL\n/bin/bash\nroot@vbox:/# id\nuid=0(root) gid=7823 groups=7823\nroot@vbox:/# cd /dev/shm/kit\nroot@vbox:/dev/shm/kit# ls\nconfig\trk.so  xmrig\nroot@vbox:/dev/shm/kit# mv xmrig top\nroot@vbox:/dev/shm/kit# export PATH=.:$PATH\nroot@vbox:/dev/shm/kit# ssh -F config ymv\nWarning: Permanently added '192.168.5.95' (ED25519) to the list of known hosts.\npocmp@192.168.5.95's password: \n[1]+  Stopped                 ssh -F config ymv\nroot@vbox:/dev/shm/kit# bg\n[1]+ ssh -F config ymv &\nroot@vbox:/dev/shm/kit# top -o 127.0.0.1:3333 -B\nroot@vbox:/dev/shm/kit# ps -ef |\n        \ncd ..\nroot@vbox:/dev/shm# rm -rf kit\nroot@vbox:/dev/shm# ps -ef | grep top\nroot         977       1 99 19:29 ?        00:00:53 top -o 127.0.0.1:3333 -B\nroot         993     941  0 19:29 pts/2    00:00:00 grep top\nroot@vbox:/dev/shm# ls\nroot@vbox:/dev/shm# ",
+    "caption": "Direct raw-memory excerpt shows UID 0/GID 7823, xmrig renamed to top, an SSH configuration alias, a local mining endpoint, and removal of kit. It is an untimed terminal remnant, not a timestamped audit log."
+  },
+  {
+    "number": 10,
+    "title": "Python shell evidence verified in raw memory",
+    "source": "memory_dump/memory-strings.ascii and memory_dump/avml.lime",
+    "text": "Offset 4705136294: import pty; pty.spawn(\"/bin/bash\")\nExact match in raw capture: True\nOffset 4707580207: import pty; pty.spawn(\"/bin/bash\")\nExact match in raw capture: True\nOffset 4743251455: python3 -c 'import pty; pty.spawn(\"/bin/bash\")'\nExact match in raw capture: True",
+    "caption": "Selected Python PTY strings were verified against the raw memory bytes at the offsets reported in the supplied strings file."
+  },
+  {
+    "number": 11,
+    "title": "Shell socket on TCP port 22",
+    "source": "Supplied memory_dump/output-sockstat",
+    "text": "  347  4026531840\tsshd\t937\t937\t8\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  348  4026531840\tsh\t939\t939\t0\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  349  4026531840\tsh\t939\t939\t1\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  350  4026531840\tsh\t939\t939\t2\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  351  4026531840\tsh\t939\t939\t8\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  352  4026531840\tpython3\t940\t940\t0\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  353  4026531840\tpython3\t940\t940\t1\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  354  4026531840\tpython3\t940\t940\t2\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  355  4026531840\tpython3\t940\t940\t8\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  356  4026531840\tbash\t941\t941\t8\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-",
+    "caption": "The supplied socket table associates the same kernel socket with sshd, sh, python3, and bash on the .35:48411 connection. TCP/22 alone does not prove an authenticated SSH session."
+  },
+  {
+    "number": 12,
+    "title": "Miner connection and SSH forwarding",
+    "source": "Supplied memory_dump/output-sockstat",
+    "text": "  357  4026531840\tssh\t975\t975\t3\t0x8c7cc405cc00\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t33440\t192.168.5.95\t22\tESTABLISHED\t-\n  358  4026531840\tssh\t975\t975\t4\t0x8c7cc404a900\tAF_INET6\tSTREAM\tTCP\t::1\t3333\t::\t0\tLISTEN\t-\n  359  4026531840\tssh\t975\t975\t5\t0x8c7cc4043900\tAF_INET\tSTREAM\tTCP\t127.0.0.1\t3333\t0.0.0.0\t0\tLISTEN\t-\n  360  4026531840\tssh\t975\t975\t6\t0x8c7cc405e880\tAF_INET\tSTREAM\tTCP\t127.0.0.1\t3333\t127.0.0.1\t59182\tESTABLISHED\t-\n  361  4026531840\ttop\t977\t977\t8\t0x8c7cc4059300\tAF_INET\tSTREAM\tTCP\t192.168.4.22\t22\t192.168.4.35\t48411\tESTABLISHED\t-\n  362  4026531840\ttop\t977\t977\t17\t0x8c7cc405c280\tAF_INET\tSTREAM\tTCP\t127.0.0.1\t59182\t127.0.0.1\t3333\tESTABLISHED\t-",
+    "caption": "SSH PID 975 connects to 192.168.5.95:22 and listens on loopback port 3333. Top PID 977 connects to that loopback listener, consistent with the recovered launch command."
+  },
+  {
+    "number": 13,
+    "title": "Preload failures during an earlier boot",
+    "source": "Parsed system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~",
+    "text": "2026-03-24 23:16:30.437151+00:00  ERROR: ld.so: object '/lib/x86_64-linux-gnu/libymv.so.3' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.\n  system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 760\n2026-03-24 23:16:30.703139+00:00  ERROR: ld.so: object '/lib/x86_64-linux-gnu/libymv.so.3' from /etc/ld.so.preload cannot be preloaded (file too short): ignored.\n  system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 939\n2026-03-24 23:16:30.743856+00:00  Server listening on 0.0.0.0 port 22.\n  system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 952\n2026-03-24 23:17:03.323052+00:00  Connection closed by 192.168.4.35 port 48411\n  system@00064dcd6b0507a3-7a3e1e7e0da0f332.journal~ record 990",
+    "caption": "The earlier boot logs repeated preload failures because the library was too short. Later mapped-library evidence must be assessed separately from these earlier errors."
+  },
+  {
+    "number": 14,
+    "title": "Suspicious library metadata and recorded hash",
+    "source": "bodyfile/bodyfile.txt; hash_executables/hash_executables.sha1",
+    "text": "28956  0|/usr/lib/x86_64-linux-gnu/libymv.so.3|715378|-rwxr-xr-x|0|0|24024|1774394719|1774394691|1774394691|1774394691\n\nBodyfile columns: filename, inode, mode, UID, GID, size, atime, mtime, ctime, birthtime\n\n  377  0fd709f09c073df274e272aabcabe3e0f3487f9e  /usr/lib/x86_64-linux-gnu/libymv.so.3",
+    "caption": "The library has size 24,024 bytes and a collector-recorded SHA-1. Its file contents were not separately collected, so a full-file SHA-256 is not asserted."
+  },
+  {
+    "number": 15,
+    "title": "Persistence checks: cron and startup files",
+    "source": "[root]/etc/crontab; archive member inventory",
+    "text": "    7  SHELL=/bin/sh\n    8  PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n   18  17 *\t* * *\troot\tcd / && run-parts --report /etc/cron.hourly\n   19  25 6\t* * *\troot\ttest -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }\n   20  47 6\t* * 7\troot\ttest -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }\n   21  52 6\t1 * *\troot\ttest -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }\n\nCollected user startup files:\n[root]/home/worker/.bash_logout\n[root]/home/worker/.bashrc\n[root]/home/worker/.profile\n[root]/root/.bashrc\n[root]/root/.profile\n\nNo authorized_keys, .bash_history, or .zsh_history member found.",
+    "caption": "Cron shows standard maintenance jobs. Missing history/key files are collection absences and do not by themselves establish deletion or absence on the source host."
+  },
+  {
+    "number": 16,
+    "title": "Host time and forensic collection",
+    "source": "live_response/system/timedatectl_status.txt; uac.log",
+    "text": "    1                 Local time: Tue 2026-03-24 19:39:35 EDT\n    2             Universal time: Tue 2026-03-24 23:39:35 UTC\n    3                   RTC time: Tue 2026-03-24 23:39:27\n    4                  Time zone: America/New_York (EDT, -0400)\n    5  System clock synchronized: yes\n    6                NTP service: active\n    7            RTC in local TZ: no\n\n    1  2026-03-24 19:38:07 -0400 INF Unix-like Artifacts Collector DEVELOPMENT VERSION\n    2  2026-03-24 19:38:07 -0400 INF UAC directory: /root/uac-github\n    3  2026-03-24 19:38:07 -0400 INF Command line: ./uac -a memory_dump/avml.yaml -p ir_triage /root",
+    "caption": "The host reports EDT (UTC-04:00); report timelines normalize to UTC. UAC identifies itself as a development version and uses the ir_triage profile plus AVML."
+  }
+]
